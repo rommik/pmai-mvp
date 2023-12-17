@@ -136,7 +136,7 @@ CMakeScripts/
 CTestTestfile.cmake
 cmake_install.cmake
 install_manifest.txt
-Makefile
+# Makefile
 *.cmake
 *.vcxproj
 *.vcxproj.filters
