@@ -28,7 +28,7 @@ def add_vote(data: gr.LikeData):
         votes.append("You upvoted this response: " + data.value)
     else:
         votes.append("You downvoted this response: " + data.value)
-    print(data.value)
+    return votes
 
 def get_votes():
     return '/n'.join(votes)
@@ -57,7 +57,7 @@ with gr.Blocks() as demo:
         msg.submit(user, [msg, chatbot], [msg, chatbot], queue=False).then(
             bot, chatbot, chatbot
         )
-        chatbot.like(add_vote, None, None)
+        
         
         clear.click(lambda: None, None, chatbot, queue=False)
 
@@ -65,6 +65,8 @@ with gr.Blocks() as demo:
         gr.Markdown("Project Info here")
     with gr.Tab("Memory"):
        gr.Markdown("Memory here")
+       votes_history = gr.Textbox(label="Votes")
+       chatbot.like(add_vote, None, outputs=votes_history)
         
         
         
