@@ -1,3 +1,5 @@
+force:
+	pip install --force-reinstall -r requirements.txt
 install:upgrade
 	pip install -r requirements.txt
 upgrade:
