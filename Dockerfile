@@ -14,5 +14,5 @@ COPY . .
 RUN ls -la
 RUN virtualenv -p python3.12 /code/.venv
 RUN make install
-
+EXPOSE 7860
 CMD ["make", "prod"]
