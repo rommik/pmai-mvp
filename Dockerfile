@@ -12,5 +12,5 @@ WORKDIR /code
 RUN make install
 
 COPY . .
-
+RUN ls -la
 CMD ["make", "prod"]
