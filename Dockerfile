@@ -8,9 +8,8 @@ RUN apt-get update && apt-get install -y make
 
 WORKDIR /code
 
+COPY . .
 
 RUN make install
 
-COPY . .
-RUN ls -la
 CMD ["make", "prod"]
